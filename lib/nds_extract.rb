@@ -1,6 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 require 'pp'
+<<<<<<< HEAD
 
 #AoHoAoH
 
@@ -23,3 +24,50 @@ end
 
 
 #nds[0][:movies][0][:worldwide_gross]
+=======
+
+def directors_totals(nds)
+  row_index = 0
+  while row_index < nds.length do
+  puts "Row #{row_index} has #{nds[row_index]} columns"
+
+  column_index = 0
+  while column_index < nds[row_index].length do
+    coord = "#{row_index}, #{column_index}"
+    inner_len = nds[row_index][column_index].length
+    puts "\tCoordinate [#{coord}] points to an #{nds[row_index][column_index].class} of length #{inner_len}"
+
+    inner_index = 0
+    while inner_index < inner_len do
+      puts "\t\t (#{coord}, #{inner_len}) is: #{nds[row_index][column_index][inner_index]}"
+      inner_index += 1
+    end
+    column_index += 1
+  end
+  row_index += 1
+  binding.pry
+end
+
+
+
+
+
+#def directors_totals(nds)
+  #grand_total = 0
+  #row_index = 0
+#  while row_index < nds.length do
+    #column_index = 0
+    #while column_index < nds[row_index].length do
+      #inner_len = nds[row_index][column_index].length
+      #inner_index = 0
+      #while inner_index < inner_len do
+        #grand_total += nds[row_index][column_index][inner_index][:worldwide_gross]
+        #inner_index += 1
+      #end
+      #column_index += 1
+    #end
+#    row_index += 1
+#  end
+#  grand_total
+#end
+>>>>>>> bde3358848c0096de4892b7518f68ed2a26da681
